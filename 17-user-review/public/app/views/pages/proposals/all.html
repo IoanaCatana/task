@@ -1,0 +1,41 @@
+<div class="page-header">
+	<h1>
+		Proposals 
+		<a href="/proposals/create" class="btn btn-default">
+			<span class="glyphicon glyphicon-plus"></span> 
+			New Proposal
+		</a>
+	</h1>
+
+</div>
+
+<div class="jumbotron text-center" ng-show="proposal.processing">
+	<span class="glyphicon glyphicon-repeat spinner"></span>
+	<p>Loading Proposals...</p>
+</div>
+
+<table class="table table-bordered table-striped" ng-show="proposal.proposals">
+	<thead>
+		<tr>
+			<th>Link</th>
+			<th>Name</th>
+			<th>Address</th>
+			<th>Opening Hours</th>
+			<th>Web</th>
+			<th class="col-sm-2"></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="write in proposal.proposals">
+			<td><a href="/proposals/{{ job._id }}/requests"><span class="glyphicon glyphicon-link"></span></a></td>
+			<td>{{ job.name }}</td>
+			<td>{{ job.address }}</td>
+			<td>{{ job.openingHours }}</td>
+			<td>{{ job.webAdr }}</td>
+			<td class="col-sm-2">
+				<a ng-href="/proposals/{{ job._id }}" class="btn btn-danger">Edit</a>
+				<a href="#" ng-click="proposal.deleteProposal(job._id)" class="btn btn-primary">Delete</a>
+			</td>
+		</tr>
+	</tbody>
+</table>

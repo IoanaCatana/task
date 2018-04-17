@@ -1,0 +1,81 @@
+<div class="page-header">
+	<h1 ng-if="proposal.type == 'create'">Create Proposal</h1>
+	<h1 ng-if="proposal.type == 'edit'">Edit Proposal</h1>
+</div>
+
+<form class="form-horizontal" ng-submit="proposal.saveProposal()">
+	
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Name</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="proposal.proposalData.name">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Address</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="proposal.proposalData.address">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Request Number</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="proposal.proposalData.requestNum">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Facilities</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="proposal.proposalData.facilities">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Opening Hours</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="proposal.proposalData.openingHours">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Web Address</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="proposal.proposalData.webAdr">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Mail Address</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="proposal.proposalData.mailAdr">
+		</div>
+	</div>
+
+	<div class="form-group">
+		<label class="col-sm-2 control-label">Store Image</label>
+		<div class="col-sm-6">
+			<input type="text" class="form-control" ng-model="proposal.proposaleData.proposalImage">
+		</div>
+	</div>
+	
+	<div class="form-group">
+	<div class="col-sm-offset-2 col-sm-6">
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="proposal.type == 'create'">Create Proposal</button>
+		<button type="submit" class="btn btn-success btn-lg btn-block" ng-if="proposal.type == 'edit'">Update Proposal</button>
+	</div>
+	</div>
+
+</form>
+
+<div class="row show-hide-message" ng-show="proposal.message">
+	<div class="col-sm-6 col-sm-offset-2">
+		
+		<div class="alert alert-info">
+			{{ proposal.message }}
+		</div>
+
+	</div>
+</div>
